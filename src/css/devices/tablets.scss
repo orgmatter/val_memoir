@@ -1,0 +1,108 @@
+/*** media queries for tablets devices  /* iPads (portrait) -----------  ***/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1279px) {
+  .body-container-div {
+
+    .dialog-cover-div {
+
+        .dialog-cover {
+            border: 3px solid red;
+
+            .dialog-form-cover {
+
+                .story-form-cover-div {
+
+                    .inputs-cover-div {
+
+                        .story-form-inputs-flex {
+
+                            .story-inputs-form-item {
+
+                                .story-form-inputs {
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-div {
+
+    }
+    .body-content-div {
+
+        .home-container-div {
+            // border: 2px solid green;
+            //height: 85vh;
+
+            .carousel-cover-div {
+                //height: 85vh;
+                // border: 3px solid pink;
+
+                .carousel-main-cover {
+                    width: 100%;
+                    //height: 85vh;
+                    // border: 3px solid yellow;
+
+                    .carousel-img-cover {
+                        width: 100%;
+                        height: 97vh;
+
+                        .carousel-image {
+                            width: 150% !important;
+                            height: 100% !important;
+                            //height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .feeds-container-div {
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+
+            .feed-card-cover-div {
+                flex: 0 0 75%;
+                max-width: 75%;
+                //border: 1px solid red;
+                display: flex;
+                justify-content: center;
+
+                .feed-card-component {
+                    flex: 0 0 90%;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+    .bottom-nav-div {
+
+        .bottom-fab-btn {
+            //background-color: white;
+            height: 50px;
+            width: 50px;
+        }
+    }
+  }
+}
+
+/* iPads (landscape) ----------- 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  @import '../variables/color-schemes';
+  @import '../layouts/hidef/dashboard-layout';
+  @import '../layouts/hidef/savings-plans-layout';
+  @import '../layouts/hidef/user-layout'; 
+  @import '../layouts/hidef/user-password-layout';
+  @import '../layouts/hidef/landing-page-layout';
+}
+*/

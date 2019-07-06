@@ -1,0 +1,592 @@
+/* import all styles from device */
+
+@import './devices/workstations';
+@import './devices/lg-desktops';
+@import './devices/sm-desktops';
+@import './devices/mobile';
+@import './devices/tablets';
+
+/*** media queries for large desktop devices Desktops and laptops ---------- ***/
+
+@media only screen 
+and (min-width : 1440px) and (max-width: 2439px) {
+    body {
+        font-family: 'Open-sans', sans-serif;
+        /* margin: 4px; */
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        //width: 100%;
+        margin: 0px;
+        margin-right: 0px;
+    
+        .dialog-cover {
+            border: 3px solid red;
+    
+            // .MuiDialog-container {
+            //     width: 100%;
+            //     border: 3px solid green;
+            //     padding-left: 0px;
+    
+            //     .MuiPaper-root {
+            //         border: 3px solid blue;
+            //         width: 800px;
+            //         margin: 8px;
+            //     }
+            // }
+    
+            .dialog-form-cover {
+                border: 3px solid red;
+                padding-top: 0px;
+                padding-bottom: 0px;
+    
+                .story-form-cover-div {
+    
+                    .inputs-cover-div {
+    
+                        .story-form-inputs-flex {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            border: 1px solid green;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+    
+                            .story-inputs-form-item {
+                                width: 50%;
+                                padding: 0px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+                        }
+                        .story-form-textarea-div {
+                            width: 100%;
+                            padding-left: 10px;
+                            padding-right: 10px;
+
+                            .story-inputs-form-item {
+                                width: 95%;
+                                padding: 0px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 0px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+    
+                            .story-form-text {
+                                width: 95%;
+                                border: 1px solid lightgrey;
+                                height: 100px;
+                                max-height: 100px;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                padding-left: 5px;
+    
+                                &:focus {
+                                    border: 1px solid lightblue;
+                                }
+                            }
+                        }
+                        .story-form-btn-div {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+    
+                            .story-form-btn {
+                                width: 60%;
+                                background-color: blue;
+                                padding-top: 10px;
+                                padding-bottom: 5px;
+                                color: white;
+                                text-align: center;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                border: none;
+                            }   
+                        }
+                    }
+                }
+            }
+        }
+    
+        .root {
+            flex: 0 0 100%;
+            max-width: 100%;
+            // border: 1px solid blue;
+        }
+    }
+}
+
+/*** media queries for small desktops devices ***/
+
+@media only screen 
+and (min-width : 1280px) and (max-width: 1439px) {
+    body {
+        font-family: 'Open-sans', sans-serif;
+        /* margin: 4px; */
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        //width: 100%;
+        margin: 0px;
+        margin-right: 0px;
+    
+        .dialog-cover {
+            // border: 3px solid red;
+    
+            // .MuiDialog-container {
+            //     width: 100%;
+            //     border: 3px solid green;
+            //     padding-left: 0px;
+    
+            //     .MuiPaper-root {
+            //         border: 3px solid blue;
+            //         width: 800px;
+            //         margin: 8px;
+            //     }
+            // }
+    
+            .dialog-form-cover {
+                //border: 3px solid red;
+                padding-top: 0px;
+                padding-bottom: 0px;
+    
+                .story-form-cover-div {
+    
+                    .inputs-cover-div {
+    
+                        .story-form-inputs-flex {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            //border: 1px solid green;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+    
+                            .story-inputs-form-item {
+                                width: 50%;
+                                padding: 0px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+                        }
+                        .story-form-textarea-div {
+                            width: 100%;
+                            padding-left: 10px;
+                            padding-right: 10px;
+
+                            .story-inputs-form-item {
+                                width: 95%;
+                                padding: 0px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 0px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+    
+                            .story-form-text {
+                                width: 95%;
+                                border: 1px solid lightgrey;
+                                height: 100px;
+                                max-height: 100px;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                padding-left: 5px;
+    
+                                &:focus {
+                                    border: 1px solid lightblue;
+                                }
+                            }
+                        }
+                        .story-form-btn-div {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+    
+                            .story-form-btn {
+                                width: 60%;
+                                background-color: blue;
+                                padding-top: 10px;
+                                padding-bottom: 5px;
+                                color: white;
+                                text-align: center;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                border: none;
+                            }   
+                        }
+                    }
+                }
+            }
+        }
+    
+        .root {
+            flex: 0 0 100%;
+            max-width: 100%;
+            // border: 1px solid blue;
+        }
+    }
+}
+
+/*** media queries for mobile devices ***/
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 767px) {
+    body {
+        font-family: 'Open-sans', sans-serif;
+        /* margin: 4px; */
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        //width: 100%;
+        margin: 0px;
+        margin-right: 0px;
+    
+        .dialog-cover {
+            //border: 3px solid red;
+    
+            .MuiDialog-container {
+                width: 100%;
+                //border: 3px solid green;
+                padding-left: 0px;
+    
+                .MuiPaper-root {
+                    //border: 3px solid blue;
+                    width: 800px;
+                    margin: 8px;
+                }
+            }
+    
+            .dialog-form-cover {
+                //border: 3px solid red;
+                padding-top: 0px;
+                padding-bottom: 0px;
+    
+                .story-form-cover-div {
+    
+                    .inputs-cover-div {
+    
+                        .story-form-inputs-flex {
+                            display: flex;
+                            //justify-content: space-between;
+                            flex-direction: column;
+                            width: 100%;
+                            //border: 1px solid green;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+    
+                            .story-inputs-form-item {
+                                width: 90%;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                //border: 1px solid green;
+
+                                .story-inputs-form-p {
+                                    //border: 1px solid red;
+                                }
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+                        }
+                        .story-form-textarea-div {
+                            width: 100%;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 5px;
+                            padding-top: 5px;
+
+                            .story-inputs-form-item {
+                                width: 90%;
+                                padding: 0px;
+                                padding-top: 3px;
+                                padding-bottom: 3px;
+                                padding-left: 0px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 34px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+    
+                            .story-form-text {
+                                width: 90%;
+                                border: 1px solid lightgrey;
+                                height: 100px;
+                                max-height: 100px;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                padding-left: 5px;
+    
+                                &:focus {
+                                    border: 1px solid lightblue;
+                                }
+                            }
+                        }
+                        .story-form-btn-div {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+    
+                            .story-form-btn {
+                                width: 92%;
+                                background-color: blue;
+                                padding-top: 10px;
+                                padding-bottom: 5px;
+                                color: white;
+                                text-align: center;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                border: none;
+                            }   
+                        }
+                    }
+                }
+            }
+        }
+    
+        .root {
+            flex: 0 0 100%;
+            max-width: 100%;
+            // border: 1px solid blue;
+        }
+    }
+}
+
+/*** media queries for tablets devices  /* iPads (portrait) -----------  ***/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1279px) {
+    body {
+        font-family: 'Open-sans', sans-serif;
+        /* margin: 4px; */
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        //width: 100%;
+        margin: 0px;
+        margin-right: 0px;
+    
+        .dialog-cover {
+            //border: 3px solid red;
+    
+            .MuiDialog-container {
+                width: 100%;
+                //border: 3px solid green;
+                padding-left: 0px;
+    
+                .MuiPaper-root {
+                    //border: 3px solid blue;
+                    width: 800px;
+                    margin: 8px;
+                }
+            }
+    
+            .dialog-form-cover {
+                //border: 3px solid red;
+                padding-top: 0px;
+                padding-bottom: 0px;
+    
+                .story-form-cover-div {
+    
+                    .inputs-cover-div {
+    
+                        .story-form-inputs-flex {
+                            display: flex;
+                            //justify-content: space-between;
+                            flex-direction: column;
+                            width: 100%;
+                            //border: 1px solid green;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+    
+                            .story-inputs-form-item {
+                                width: 90%;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                //border: 1px solid green;
+
+                                .story-inputs-form-p {
+                                    //border: 1px solid red;
+                                }
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 35px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+                        }
+                        .story-form-textarea-div {
+                            width: 100%;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 5px;
+                            padding-top: 5px;
+
+                            .story-inputs-form-item {
+                                width: 90%;
+                                padding: 0px;
+                                padding-top: 3px;
+                                padding-bottom: 3px;
+                                padding-left: 0px;
+                                padding-right: 10px;
+    
+                                .story-form-inputs {
+                                    width: 100%;
+                                    border: 1px solid lightgrey;
+                                    height: 34px;
+                                    max-height: 40px;
+                                    font-size: 1.1rem;
+                                    border-radius: 4px;
+                                    padding-left: 5px;
+    
+                                    &:focus {
+                                        border: 1px solid lightblue;
+                                    }
+                                }
+                            }
+    
+                            .story-form-text {
+                                width: 90%;
+                                border: 1px solid lightgrey;
+                                height: 100px;
+                                max-height: 100px;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                padding-left: 5px;
+    
+                                &:focus {
+                                    border: 1px solid lightblue;
+                                }
+                            }
+                        }
+                        .story-form-btn-div {
+                            width: 96%;
+                            display: flex;
+                            justify-content: center;
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+    
+                            .story-form-btn {
+                                width: 92%;
+                                background-color: blue;
+                                padding-top: 10px;
+                                padding-bottom: 5px;
+                                color: white;
+                                text-align: center;
+                                font-size: 1.1rem;
+                                border-radius: 4px;
+                                border: none;
+                            }   
+                        }
+                    }
+                }
+            }
+        }
+    
+        .root {
+            flex: 0 0 100%;
+            max-width: 100%;
+            // border: 1px solid blue;
+        }
+    }
+}
+
