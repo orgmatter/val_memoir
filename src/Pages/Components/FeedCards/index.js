@@ -27,58 +27,63 @@ function FeedCards (props) {
  
     const classes = styles();
     const { feedData } = props; 
+    let cardData;
 
-    const cardData = feedData.map((data, index) => {
-        return (
-                
-            <Card className={'feed-card-component'} key={data.id}>
-                <CardHeader
-                    avatar={
-                    <Avatar aria-label="Recipe" className={classes.feedCardAvatar}>
-                        {data.firstLetterFname}
-                    </Avatar>
-                    }
-                    action={
-                    <IconButton aria-label="Settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                    }
-                    title={data.username}
-                    subheader={data.headline}
-                />
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {data.storyText}
-                    </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                    <IconButton aria-label="Add to favorites">
-                        <FavoriteIcon />
-                    </IconButton>
-                    <IconButton aria-label="Share">
-                        {/* <ShareIcon /> */}
-                    </IconButton>
-                    <IconButton
-                        className={clsx(classes.feedExpand, {
-                            [classes.feedExpandOpen]: expanded,
-                        })}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="Show more"
-                    >
-                        <ExpandMoreIcon />
-                    </IconButton>
-                </CardActions>
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
+    if (feedData !== 'no result') {
+        cardData = feedData.map((data, index) => {
+            return (
+                    
+                <Card className={'feed-card-component'} key={data.id}>
+                    <CardHeader
+                        avatar={
+                        <Avatar aria-label="Recipe" className={classes.feedCardAvatar}>
+                            {data.firstLetterFname}
+                        </Avatar>
+                        }
+                        action={
+                        <IconButton aria-label="Settings">
+                            <MoreVertIcon />
+                        </IconButton>
+                        }
+                        title={data.username}
+                        subheader={data.headline}
+                    />
                     <CardContent>
-                        <Typography paragraph>
+                        <Typography variant="body2" color="textSecondary" component="p">
                             {data.storyText}
                         </Typography>
                     </CardContent>
-                </Collapse>
-            </Card>
-        )
-    })
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="Add to favorites">
+                            <FavoriteIcon />
+                        </IconButton>
+                        <IconButton aria-label="Share">
+                            {/* <ShareIcon /> */}
+                        </IconButton>
+                        <IconButton
+                            className={clsx(classes.feedExpand, {
+                                [classes.feedExpandOpen]: expanded,
+                            })}
+                            onClick={handleExpandClick}
+                            aria-expanded={expanded}
+                            aria-label="Show more"
+                        >
+                            <ExpandMoreIcon />
+                        </IconButton>
+                    </CardActions>
+                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+                        <CardContent>
+                            <Typography paragraph>
+                                {data.storyText}
+                            </Typography>
+                        </CardContent>
+                    </Collapse>
+                </Card>
+            )
+        })
+    } else {
+        cardData = <p>Oops! No stories at this time, click the <strong>+</strong> button below to share your story!</p>
+    }
 
     return (
         <div className="feed-card-cover-div">
