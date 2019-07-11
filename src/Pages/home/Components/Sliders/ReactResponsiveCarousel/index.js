@@ -15,11 +15,12 @@ class ReactResponsiveCarousel extends Component {
 
     render () {;
         const { images } = this.props;
-        const imageParams = "&w=1000&h=1000&dpi=2";
+        const imageParams = "w=100&h=800&fit=facearea";
 
         const carouselImages = images.map((src, index) => {
             console.log(src.urls.raw);
             const srcParams = src.urls.raw+imageParams;
+            console.log(srcParams);
             return (
                 <div className="carousel-img-cover" key={src.id}>
                     <img src={srcParams} key={src.id} className="carousel-image" />
@@ -37,5 +38,6 @@ class ReactResponsiveCarousel extends Component {
     }
 
 }
+//https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc5NjM5fQ
 
 export default ReactResponsiveCarousel;

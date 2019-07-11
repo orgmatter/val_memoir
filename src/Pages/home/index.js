@@ -4,6 +4,7 @@ import { getImages } from '../../Store/Actions/ImageActions';
 //import NukaCarousel from './Components/Sliders/NukaCarousel';
 //import BoostrapCarousel from './Components/Sliders/BoostrapCarousel';
 import ReactResponsiveCarousel from './Components/Sliders/ReactResponsiveCarousel';
+import FeedCards from '../Components/FeedCards';
 
 
 
@@ -24,6 +25,9 @@ class Home extends Component {
         return (
             <div className="home-container-div">
                 <ReactResponsiveCarousel images={imageData} />
+                <div className="feeds-container-div">
+                    <FeedCards />
+                </div>
             </div>
         )
     }

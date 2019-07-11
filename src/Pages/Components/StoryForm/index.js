@@ -20,6 +20,7 @@ class StoryForm extends Component {
             gender: 'Gender',
             headline: '',
             storyText: '',
+            postCount: 0,
         }
     }
 
@@ -38,32 +39,54 @@ class StoryForm extends Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
+        const { feedData } = this.props.feeds;
+        const username = localStorage.getItem('username');
         let formData = this.state;
-        const { addPost } = this.props;
-        let postStatus = addPost(formData);
-        let btnProps = this.state.btnProps;
-        btnProps.isClicked = true;
-        btnProps.isDisabled = true;
-        
+        let formUsername = formData.username;
+        if((formUsername == username)){
+            alert('Oops! You have exceeded your limit!');
 
-        this.setState({
-            btnProps,
-            id: '',
-            firstname: '',
-            lastname: '',
-            username: '',
-            gender: 'Gender',
-            headline: '',
-            storyText: '',
-        })
+            let btnProps = this.state.btnProps;
+            btnProps.isClicked = true;
+            btnProps.isDisabled = true;
 
-        if(postStatus == 'success') {
-            window.location = '/feeds';
-        }
+            this.setState({
+                btnProps,
+                id: '',
+                firstname: '',
+                lastname: '',
+                username: '',
+                gender: 'Gender',
+                headline: '',
+                storyText: '',
+                postCount: 0,
+            })
+        }else {
 
-        //const data = this.state;
-        console.log(formData);
-        
+            formData.postCount = formData.postCount + 1;
+            const { addPost } = this.props;
+            let postStatus = addPost(formData);
+            localStorage.setItem('username', formData.username);
+            let btnProps = this.state.btnProps;
+            btnProps.isClicked = true;
+            btnProps.isDisabled = true;
+            
+
+            this.setState({
+                btnProps,
+                id: '',
+                firstname: '',
+                lastname: '',
+                username: '',
+                gender: 'Gender',
+                headline: '',
+                storyText: '',
+                postCount: 0,
+            })
+
+            //const data = this.state;
+            console.log(formData);
+            }
     }
 
     // onChangeTxt = (e) => {
@@ -112,12 +135,18 @@ class StoryForm extends Component {
                             <textarea className="story-form-text" name="storyText" id="story-text" placeholder="Write your story!" value={this.state.storyText} onChange={this.onChangeInput} required/>
                         </div>
                         <div className="story-form-btn-div">
-                            <Button type="submit" className="story-form-btn" id="form-btn" disabled={this.state.btnProps.isDisabled}>{this.state.btnProps.isClicked ? '...Sending' : 'Share it!'}</Button> 
+                            <Button type="submit" className="story-form-btn" id="form-btn">Share it!</Button> 
                         </div>
                     </div>
                 </form>
             </div>
         )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        feeds: state.feeds
     }
 }
 
@@ -127,4 +156,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(StoryForm);
+export default connect(mapStateToProps, mapDispatchToProps)(StoryForm);

@@ -34,9 +34,9 @@ function BottomNav (props) {
                     showLabels
                     className={classes.bottomNavRoot}
                 >
-                    <BottomNavigationAction label="Home" icon={<Home />} className={classes.bottomNavItem} component={Link} to={ROUTES.home} />
                     <BottomNavigationAction className={classes.bottomNavItem} />
-                    <BottomNavigationAction label="Feeds" icon={<WebAsset />} className={classes.bottomNavItem} component={Link} to={ROUTES.feeds} />
+                    <BottomNavigationAction className={classes.bottomNavItem} />
+                    <BottomNavigationAction className={classes.bottomNavItem} />
                 </BottomNavigation>
                 <Fab color="primary" aria-label="Add" className={`${classes.bottomNavFabButton} bottom-fab-btn`} onClick={handleClickOpen}>
                     <AddIcon />
@@ -47,3 +47,6 @@ function BottomNav (props) {
 }
 
 export default BottomNav;
+
+//label="Home" icon={<Home />} className={classes.bottomNavItem} component={Link} to={ROUTES.home}
+//label="Feeds" icon={<WebAsset />} className={classes.bottomNavItem} component={Link} to={ROUTES.feeds}

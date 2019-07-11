@@ -38,25 +38,28 @@ and (max-device-width : 767px) {
 
             .home-container-div {
                 // border: 2px solid green;
+                padding-top: 50px;
                 //height: 85vh;
 
                 .carousel-cover-div {
                     //height: 85vh;
-                    // border: 3px solid pink;
+                    //border: 3px solid pink;
+                    display: flex;
+                    justify-content: center;
 
                     .carousel-main-cover {
                         width: 100%;
                         //height: 85vh;
-                        // border: 3px solid yellow;
+                        //border: 3px solid yellow;
 
                         .carousel-img-cover {
                             width: 100%;
-                            height: 97vh;
+                            height: 590px;
+                            //border: 1px solid red;
 
                             .carousel-image {
-                                width: 150% !important;
-                                height: 100% !important;
-                                //height: 100%;
+                                // width: 100% !important;
+                                height: 100%;
                             }
                         }
                     }
@@ -66,18 +69,43 @@ and (max-device-width : 767px) {
             .feeds-container-div {
                 display: flex;
                 justify-content: center;
-                padding-top: 80px;
+                padding-top: 30px;
 
-                .feed-card-cover-div {
+                .feed-card-container-div {
                     flex: 0 0 100%;
                     max-width: 100%;
                     //border: 1px solid red;
                     display: flex;
                     justify-content: center;
 
-                    .feed-card-component {
+                    .feed-card-inner-container-div {
                         flex: 0 0 90%;
                         max-width: 90%;
+                        display: flex;
+                        justify-content: center;
+                        //flex-direction: column;
+                        flex-flow: row wrap;
+                        //border: 4px solid green;
+
+                        .feed-card-cover-div {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            //max-height: 47%;
+                            padding-bottom: 15px;
+                            display: flex;
+                            justify-content: center;
+                            align-content: center;
+                            //border: 1px solid blue;
+    
+                            .feed-card-component {
+                                flex: 0 0 100%;
+                                max-width: 100%;
+                            }
+                            
+                            .no-story-res-p {
+                                //text-align: center;
+                            }
+                        }
                     }
                 }
             }

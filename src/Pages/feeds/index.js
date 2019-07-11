@@ -16,7 +16,7 @@ class Feeds extends Component {
 
         return (
             <div className="feeds-container-div">
-                <FeedCards feedData={storageData !== null ? storageData : 'no result'} />
+                <FeedCards />
             </div>
         )
     }

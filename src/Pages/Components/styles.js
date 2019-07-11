@@ -12,8 +12,11 @@ export const styles = makeStyles(theme => ({
     headerMenuButton: {
         marginRight: theme.spacing(2),
     },
+    headerSendButton: {
+        marginRight: theme.spacing(0.1),
+    },
     headerTitle: {
-        flexGrow: 1,
+        flexGrow: 1.2,
     },
     paperRoot: {
         position: 'fixed',

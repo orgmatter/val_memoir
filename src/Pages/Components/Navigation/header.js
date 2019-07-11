@@ -4,10 +4,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
+import Send from '@material-ui/icons/Send';
 import { styles } from '../styles';
 
 
-function Header ({title}) {
+function Header ({title, handleClickOpen}) {
     const classes = styles();
     return (
         <div className={classes.pageRoot}>
@@ -19,6 +20,9 @@ function Header ({title}) {
                     <Typography variant="h6" className={classes.headerTitle}>
                         {title}
                     </Typography>
+                    <IconButton edge="end" className={classes.headerSendButton} color="inherit" aria-label="Menu" onClick={handleClickOpen} >
+                        <Send />
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div>

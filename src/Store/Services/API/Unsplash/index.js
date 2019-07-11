@@ -1,10 +1,14 @@
 export const endpoints = {
-    url: 'https://api.unsplash.com/photos/',
+    url: 'https://api.unsplash.com/search/photos',
     method: 'GET',
     queries: {
         limit: {
             name: 'per_page',
             value: 5,
+        },
+        category: {
+            name: 'query',
+            value: 'love',
         },
         access: {
             name: 'client_id',

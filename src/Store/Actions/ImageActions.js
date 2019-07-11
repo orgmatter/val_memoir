@@ -6,8 +6,9 @@ export const getImages = () => dispatch => {
     const url = ENDPOINTS.url;
     const method = ENDPOINTS.method;
     const queries = ENDPOINTS.queries;
-
-    fetch(`${url}?${queries.limit.name}=${queries.limit.value}`, {
+    const queryUrl = `${url}?${queries.limit.name}=${queries.limit.value}&${queries.category.name}=${queries.category.value}`
+    console.log(queryUrl)
+    fetch(queryUrl, {
         method: method,
         headers: {
             'Accept': 'application/json',
@@ -20,9 +21,10 @@ export const getImages = () => dispatch => {
         if(res.ok){
             res.json()
             .then(data => {
+                console.log(data)
                 dispatch({
                     type: GET_IMAGE_SUCCESS,
-                    payload: data,
+                    payload: data.results,
                 })
             }) 
         } else {
