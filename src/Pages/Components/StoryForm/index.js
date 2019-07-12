@@ -88,7 +88,7 @@ class StoryForm extends Component {
             })
 
             //const data = this.state;
-            console.log(formData);
+            //console.log(formData);
             }
     }
 

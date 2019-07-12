@@ -106,6 +106,7 @@ function FeedCards (props) {
 const mapStateToProps = (state) => {
     return {
         feeds: state.feeds,
+        likes: state.likes
     }
 }
 
