@@ -15,6 +15,7 @@ class Home extends Component {
 
     componentWillMount() {
         this.props.getImages();
+        localStorage.clear();
     }
 
     render () {

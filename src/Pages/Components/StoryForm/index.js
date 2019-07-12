@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { addPost } from '../../../Store/Actions/AddPostActions';
+import { addNoAccessFeedbacks } from '../../../Store/Actions/AddNoAccessFeedbacks';
 
 class StoryForm extends Component {
     constructor(props) {
@@ -40,11 +41,13 @@ class StoryForm extends Component {
     onFormSubmit = (e) => {
         e.preventDefault();
         const { feedData } = this.props.feeds;
+        const { addNoAccessFeedbacks } = this.props;
         const username = localStorage.getItem('username');
         let formData = this.state;
         let formUsername = formData.username;
         if((formUsername == username)){
-            alert('Oops! You have exceeded your limit!');
+            const feedback = 'Oops! You have exceeded your limit!';
+            addNoAccessFeedbacks(feedback);
 
             let btnProps = this.state.btnProps;
             btnProps.isClicked = true;
@@ -146,13 +149,14 @@ class StoryForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        feeds: state.feeds
+        feeds: state.feeds,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPost: (data) => dispatch(addPost(data)) 
+        addPost: (data) => dispatch(addPost(data)),
+        addNoAccessFeedbacks: (feedback) => dispatch(addNoAccessFeedbacks(feedback)),
     }
 }
 

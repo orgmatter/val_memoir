@@ -14,6 +14,8 @@ import Collapse from '@material-ui/core/Collapse';
 import clsx from 'clsx';
 import { styles } from '../styles';
 import { connect } from 'react-redux';
+import { likePost } from '../../../Store/Actions/LikePost';
+import Send from '@material-ui/icons/Send';
 
 
 
@@ -23,6 +25,11 @@ function FeedCards (props) {
 
     function handleExpandClick() {
         setExpanded(!expanded);
+    }
+
+    const { likePost } = props;
+    function onLikeClick (id) {
+        likePost(id);
     }
 
  
@@ -55,8 +62,8 @@ function FeedCards (props) {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
-                            <IconButton aria-label="Add to favorites">
-                                <FavoriteIcon />
+                            <IconButton aria-label="Add to favorites" onClick={(id) => onLikeClick(data.id)}>
+                                <FavoriteIcon /> {data.likeCount > 0 ? data.likeCount : null}
                             </IconButton>
                             <IconButton aria-label="Share">
                                 {/* <ShareIcon /> */}
@@ -84,7 +91,7 @@ function FeedCards (props) {
             )
         })
     } else {
-        cardData = <p className="no-story-res-p">Oops! No stories at this time, click the <strong>+</strong> button below to share your story!</p>
+        cardData = <p className="no-story-res-p">Oops! No stories at this time, click the <strong><Send /></strong> above button below to share your story!</p>
     }
 
     return (
@@ -98,8 +105,14 @@ function FeedCards (props) {
 
 const mapStateToProps = (state) => {
     return {
-        feeds: state.feeds
+        feeds: state.feeds,
     }
 }
 
-export default connect(mapStateToProps, null)(FeedCards);
+const mapDispatchToProps = dispatch => {
+    return {
+        likePost: (postId) => dispatch(likePost(postId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedCards);

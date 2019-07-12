@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import Typography from '@material-ui/core/Typography';
 import StoryForm from '../StoryForm';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -13,7 +14,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function AlertDialogSlide(props) {
-    const { handleClickOpen, handleClose, open, setOpen} = props;
+
+    const { handleClickOpen, handleClose, open, setOpen, noAccessFeedback } = props;
+    console.log(noAccessFeedback);
 
   //const [open, setOpen] = React.useState(false);
 
@@ -40,6 +43,9 @@ export default function AlertDialogSlide(props) {
         >
             <DialogTitle id="alert-dialog-slide-title">{"Tell us about your story"}</DialogTitle>
             <DialogContent>
+                <Typography style={{color: 'red'}}>
+                    {noAccessFeedback.isFormBtnClicked == true ? noAccessFeedback.name : null}
+                </Typography>
                 <div className="dialog-form-cover">
                     <StoryForm />
                 </div>

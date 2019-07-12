@@ -4,11 +4,11 @@ import Home from './home';
 import Header from './Components/Navigation/header';
 import BottomNav from './Components/Navigation/bottomNav';
 import AlertDialogSlide from './Components/Dialog';
-//import { routes as ROUTES } from '../Routes';
-//import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 
 function Pages(props)  {
+
+    const { noAccessFeedback } = props.appFeedbacks;
 
     const [open, setOpen] = useState(false);
     
@@ -21,7 +21,7 @@ function Pages(props)  {
 
     return (
         <div className="body-container-div">
-            <AlertDialogSlide handleClickOpen={handleClickOpen} handleClose={handleClose} open={open} setOpen={setOpen} />
+            <AlertDialogSlide handleClickOpen={handleClickOpen} handleClose={handleClose} open={open} setOpen={setOpen} noAccessFeedback={noAccessFeedback} />
             <div className="header-div">
                 <Header title="Val Memoir" handleClickOpen={handleClickOpen} />
             </div>
@@ -35,5 +35,11 @@ function Pages(props)  {
     )
 }
 
-export default Pages;
+const mapStateToProps = (state) => {
+    return {
+        appFeedbacks: state.appFeedbacks,
+    }
+}
+
+export default connect(mapStateToProps, null)(Pages);
 
